@@ -1,0 +1,78 @@
+Toggle Message
+Page contains an ancher element and a paragraph below it. The paragraph visibility should be toggled by clicking on an anchor element with the following logic:
+•	At start, paragraph should not be visible
+•	After a click, paragraph should be visible
+•	After another click, the paragraph should not be visible again 
+Implement the following missing attributr to anchor and paragraph elements.
+
+HTML5,CSS3, Vue v3
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Toggle Message</title>
+  <script src="https://unpkg.com/vue@3.4.18/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app">
+    Add missing attributes to a and p elements -->
+    <!-- <a href="#">Want to buy a new car?</a>
+    <p>Call +11 22 33 44 now!</p>
+  </div>
+  <script>
+    const appConfig = {
+        data() {
+          return {
+            isVisible: false
+           
+          }
+        }
+      };
+
+    const app = Vue.createApp(appConfig).mount('#app');
+
+    console.log(document.getElementById("app").innerHTML);
+  </script>
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Toggle Message</title>
+  <script src="https://unpkg.com/vue@3.4.18/dist/vue.global.js"></script>
+  <style>
+    /* Optional: Add some basic styling */
+    a {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <a href="#" @click="toggleVisibility">Want to buy a new car?</a>
+    <p v-if="isVisible">Call +11 22 33 44 now!</p>
+  </div>
+  <script>
+    const appConfig = {
+      data() {
+        return {
+          isVisible: false
+        };
+      },
+      methods: {
+        toggleVisibility() {
+          this.isVisible = !this.isVisible;
+        }
+      }
+    };
+
+    const app = Vue.createApp(appConfig).mount('#app');
+  </script>
+</body>
+</html>
